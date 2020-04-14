@@ -14,10 +14,8 @@ export class RegisterComponent implements OnInit {
         const x = (document.getElementById('inputPassword') as HTMLInputElement);
 
         if (x.type === 'password') {
-          console.log(x.type);
           x.type = 'text';
         } else {
-          console.log(x.type);
           x.type = 'password';
         }
       }
