@@ -9,16 +9,17 @@ export class RegisterComponent implements OnInit {
 
   constructor() { }
   ngOnInit(): void {
-    function showPass() {
-    //  let x = <HTMLInputElement>document.getElementById('inputPassword');
-      let x = (document.getElementById(inputPassword) as HTMLInputElement);
-
-      if (x.type === 'password') {
-        x.type = 'text';
-      } else {
-        x.type = 'password';
-      }
     }
-  }
+    showPass() {
+        const x = (document.getElementById('inputPassword') as HTMLInputElement);
+
+        if (x.type === 'password') {
+          console.log(x.type);
+          x.type = 'text';
+        } else {
+          console.log(x.type);
+          x.type = 'password';
+        }
+      }
 
 }
