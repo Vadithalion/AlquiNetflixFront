@@ -44,5 +44,17 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
-  }
+  },
+  "description": "Pagina de alquiler de películas de netflix",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vadithalion/AlquiNetflixFront.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vadithalion/AlquiNetflixFront/issues"
+  },
+  "homepage": "https://github.com/Vadithalion/AlquiNetflixFront#readme"
 }
