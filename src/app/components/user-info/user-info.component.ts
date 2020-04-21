@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService} from '../../services/users.service';
+// import { UsersService} from '../../services/users.service';
 import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
@@ -16,17 +16,17 @@ export class UserInfoComponent implements OnInit {
   orders = '';
 
   constructor(
-    private usersService: UsersService,
+    // private usersService: UsersService,
     private router: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
-    ShowUser(this.email){
-      this.usersService.ObtenerPoke().subscribe((res: any) => {
-        this.email = res.results;
-        console.log(res);
-      });
-    }
+    // ShowUser(this.email){
+    //   this.usersService.ObtenerPoke().subscribe((res: any) => {
+    //     this.email = res.results;
+    //     console.log(res);
+    //   });
+    // }
   }
 
 }
