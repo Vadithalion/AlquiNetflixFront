@@ -11,6 +11,7 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
 import { FilmInfoComponent } from './components/film-info/film-info.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     LoginComponent,
     UserInfoComponent,
-    FilmInfoComponent
+    FilmInfoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
