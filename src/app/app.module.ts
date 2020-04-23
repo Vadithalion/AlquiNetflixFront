@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,8 @@ import { FooterComponent } from './components/footer/footer.component';
     UserInfoComponent,
     FilmInfoComponent,
     FooterComponent
+    
+    
   ],
   imports: [
     BrowserModule,
