@@ -1,4 +1,13 @@
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Nombre Pelicula" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-primary" type="button" id="button-addon2">BUSCAR</button>
+  </div>
+</div>
+
 <div class="row row-cols-1 row-cols-md-4">
+  
 <div *ngFor="let card of cards" class="card " style="width: 18rem;">
   <img class="card-img-top" src={{card.img}} alt="Card image cap">
   <div class="card-body">

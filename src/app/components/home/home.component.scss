@@ -3,11 +3,11 @@
     flex-direction: row;
     height: 80vh;
     width: 98vw;
-
 }
 .card{
   max-width: 20vw;
   display: flex;
+  margin: 10px;
   
 }
 .card-title{
@@ -20,4 +20,13 @@
     text-transform: uppercase;
     font-weight: bold;
     font-family: sans-serif;
+}
+.row{
+    justify-content: center;
+}
+.input-group{
+  margin-top: 5px;
+  width: 90vw;
+  display: flex;
+  
 }
