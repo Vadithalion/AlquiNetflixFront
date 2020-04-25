@@ -1,0 +1,23 @@
+.card-grup{
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+    width: 98vw;
+
+}
+.card{
+  max-width: 20vw;
+  display: flex;
+  
+}
+.card-title{
+    text-align: center;
+    text-transform: uppercase;
+}
+.btn{
+    background-color: red;
+    border: red;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+}
