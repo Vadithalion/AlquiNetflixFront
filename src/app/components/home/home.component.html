@@ -7,12 +7,14 @@
 </div>
 
 <div class="row row-cols-1 row-cols-md-4">
-  
-<div *ngFor="let card of cards" class="card " style="width: 18rem;">
-  <img class="card-img-top" src={{card.img}} alt="Card image cap">
+  <p> {{ this.filmsServices.allFilms[0].title|json }}</p>
+<div *ngFor="let film of filmsServices.allFilms" class="card " style="width: 18rem;">
+  <p> {{ film.title }}</p>
+
+  <img class="card-img-top" src={{film.image}} alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">{{card.name}}</h5>
-    <p class="card-text">{{card.txt}}</p>
+    <h5 class="card-title">{{film.title}}</h5>
+    <p class="card-text">{{film.genre}}</p>
     <a href="#" class="btn btn-primary" routerLink="film">ALQUILAR</a>
   </div>
 </div>

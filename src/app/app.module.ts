@@ -10,7 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { FilmInfoComponent } from './components/film-info/film-info.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
 
 
@@ -25,8 +25,7 @@ import { FooterComponent } from './components/footer/footer.component';
     UserInfoComponent,
     FilmInfoComponent,
     FooterComponent
-    
-    
+
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FilmsService } from '../../services/films/films.service';
+import {NgForm} from '@angular/forms';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -6,89 +9,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  
-  cards: Array<any> = [
-    {
-      img:
-        'https://images-na.ssl-images-amazon.com/images/I/51cfeIIm12L._AC_.jpg',
-      name: 'Star Wars',
-      txt: 'Era se una vez una galaxia muy muy lejana y estaba Don Quijote',
-    },
-    {
-      img:
-        'https://pics.filmaffinity.com/Gladiator-152381312-large.jpg',
-      name: 'Gladiator',
-      txt: 'Era se una vez una galaxia muy muy lejana y estaba Don Quijote',
-    },
-    {
-      img:
-        'https://i.pinimg.com/originals/4d/d2/3b/4dd23b8120032cce4e9826f3cbffeafc.jpg',
-      name: 'Avatar',
-      txt: 'Era se una vez una galaxia muy muy lejana y estaba Don Quijote',
-    },
-    {
-      img:
-        'https://es.web.img3.acsta.net/r_1280_720/pictures/15/08/13/15/37/044333.jpg',
-      name: 'No Scape',
-      txt: 'Era se una vez una galaxia muy muy lejana y estaba Don Quijote',
-    },
-    {
-      img:
-        'https://images-na.ssl-images-amazon.com/images/I/51cfeIIm12L._AC_.jpg',
-      name: 'Start Wars',
-      txt: 'Era se una vez una galaxia muy muy lejana y estaba Don Quijote',
-    },
-    {
-      img:
-        'https://images-na.ssl-images-amazon.com/images/I/51cfeIIm12L._AC_.jpg',
-      name: 'Start Wars',
-      txt: 'Era se una vez una galaxia muy muy lejana y estaba Don Quijote',
-    },
-    {
-      img:
-        'https://images-na.ssl-images-amazon.com/images/I/51cfeIIm12L._AC_.jpg',
-      name: 'Start Wars',
-      txt: 'Era se una vez una galaxia muy muy lejana y estaba Don Quijote',
-    },
-    {
-      img:
-        'https://images-na.ssl-images-amazon.com/images/I/51cfeIIm12L._AC_.jpg',
-      name: 'Start Wars',
-      txt: 'Era se una vez una galaxia muy muy lejana y estaba Don Quijote',
-    },
-    {
-      img:
-        'https://images-na.ssl-images-amazon.com/images/I/51cfeIIm12L._AC_.jpg',
-      name: 'Start Wars',
-      txt: 'Era se una vez una galaxia muy muy lejana y estaba Don Quijote',
-    },
-    {
-      img:
-        'https://images-na.ssl-images-amazon.com/images/I/51cfeIIm12L._AC_.jpg',
-      name: 'Start Wars',
-      txt: 'Era se una vez una galaxia muy muy lejana y estaba Don Quijote',
-    },
-    {
-      img:
-        'https://images-na.ssl-images-amazon.com/images/I/51cfeIIm12L._AC_.jpg',
-      name: 'Start Wars',
-      txt: 'Era se una vez una galaxia muy muy lejana y estaba Don Quijote',
-    },
-    {
-      img:
-        'https://images-na.ssl-images-amazon.com/images/I/51cfeIIm12L._AC_.jpg',
-      name: 'Start Wars',
-      txt: 'Era se una vez una galaxia muy muy lejana y estaba Don Quijote',
-    },
-    {
-      img:
-        'https://images-na.ssl-images-amazon.com/images/I/51cfeIIm12L._AC_.jpg',
-      name: 'Start Wars',
-      txt: 'Era se una vez una galaxia muy muy lejana y estaba Don Quijote',
-    }
-  ];
 
-  constructor() {}
+  constructor(public filmsServices: FilmsService, private sanitizer: DomSanitizer) {}
+  listFilms = [] ;
+  genre = [];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.filmsServices.getAllFilms()
+
+    .subscribe(
+      allFilms => {
+        this.filmsServices.allFilms = allFilms;
+      }
+    )
+   /* this.getAllFilms();
+  }
+  getAllFilms(){
+    this.filmsServices.getAllFilms(this.Films)
+    .subscribe(
+      films => {
+        this.Films
+        },
+        console.log(this.getAllFilms);
+        console.log(this.listFilms);
+
+    },
+    err => console.log(err)
+   );
+   }*/
+}
 }
