@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import { UsersService} from '../../services/users.service';
-import {ActivatedRoute, Params} from '@angular/router';
-
+import { UserService } from '../../services/user/user.service';
+import {NgForm} from '@angular/forms';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-user-info',
   templateUrl: './user-info.component.html',
@@ -9,24 +9,19 @@ import {ActivatedRoute, Params} from '@angular/router';
 })
 export class UserInfoComponent implements OnInit {
 
-  email = '';
-  firstName = '';
-  lastName = '';
-  password = '';
-  orders = '';
-
-  constructor(
-    // private usersService: UsersService,
-    private router: ActivatedRoute,
-  ) { }
+  constructor(public userService: UserService, private sanitizer: DomSanitizer ) { }
+  user = []
 
   ngOnInit(): void {
-    // ShowUser(this.email){
-    //   this.usersService.ObtenerPoke().subscribe((res: any) => {
-    //     this.email = res.results;
-    //     console.log(res);
-    //   });
-    // }
+   
+    this.userService.getUserName()
+
+    .subscribe(
+      allusers => {
+        this.userService.allusers = allusers;
+      }
+    )
+
   }
 
 }

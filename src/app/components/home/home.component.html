@@ -7,10 +7,7 @@
 </div>
 
 <div class="row row-cols-1 row-cols-md-4">
-  <p> {{ this.filmsServices.allFilms[0].title|json }}</p>
 <div *ngFor="let film of filmsServices.allFilms" class="card " style="width: 18rem;">
-  <p> {{ film.title }}</p>
-
   <img class="card-img-top" src={{film.image}} alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{film.title}}</h5>
