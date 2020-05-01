@@ -13,15 +13,7 @@ export class UserInfoComponent implements OnInit {
   user = []
 
   ngOnInit(): void {
-   
-    this.userService.getUserName()
-
-    .subscribe(
-      allusers => {
-        this.userService.allusers = allusers;
-      }
-    )
-
+  
   }
 
 }
