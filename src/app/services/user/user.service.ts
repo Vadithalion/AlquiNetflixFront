@@ -8,13 +8,13 @@ import { environment } from 'src/environments/environment';
 export class UserService {
   [x: string]: Object;
 
-  baseUrl = 'http://localhost:4000';
+  baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
-  
+
   async register(body) {
-    const url = this.baseUrl + '/users/newuser';
+    const url = this.baseUrl + '/users/register';
     try {
         console.log(url, body);
         const data = await this.http.post(url, body).toPromise();
@@ -26,9 +26,9 @@ export class UserService {
 }
 
 async login(body) {
-    const url = this.baseUrl + '/users/login';
+    const url = this.baseUrl + '/users/login'; 
     try {
-        const data: any = await this.http.post(url, body).toPromise();
+        const data: any = await this.http.post(url, body);
         localStorage.setItem('user-token', JSON.stringify(data));
         return Promise.resolve(data.message);
     } catch (err) {

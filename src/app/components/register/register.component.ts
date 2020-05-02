@@ -10,14 +10,15 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-    userForm = new FormGroup({
-    username: new FormControl('pepe', Validators.required),
-    password: new FormControl('12345'),
-    email: new FormControl('pepe@gmail.com')
+  userForm = new FormGroup({
+    name: new FormControl ('', Validators.required),
+    surname: new FormControl(),
+    password: new FormControl(),
+    email: new FormControl()
   });
 
   constructor(
-    private apiService: UserService,
+    private userService: UserService,
     private router: Router
   ) { }
 
@@ -26,24 +27,21 @@ export class RegisterComponent implements OnInit {
 
     click_register() {
       console.log(this.userForm.value);
-      this.apiService.register(this.userForm.value).then(
+      this.userService.register(this.userForm.value).then(
         res => {
-          this.router.navigateByUrl('/login');
+          this.router.navigateByUrl('/register');
         },
         err => {
           console.error(err);
         }
       );
-
-    // showPass() {
-    //     const x = (document.getElementById('inputPassword') as HTMLInputElement);
-
-    //     if (x.type === 'password') {
-    //       x.type = 'text';
-    //     } else {
-    //       x.type = 'password';
-    //     }
-    //   }
-
-}
+    }
+  showPass() {
+    const x = (document.getElementById('inputPassword') as HTMLInputElement);
+    if (x.type === 'password') {
+      x.type = 'text';
+    } else {
+      x.type = 'password';
+    }
+  }
 }
