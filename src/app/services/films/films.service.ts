@@ -3,11 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class FilmsService {
 allFilms = [];
+
 
   constructor(private http: HttpClient) { }
 
@@ -15,4 +17,9 @@ allFilms = [];
   getAllFilms(){
     return this.http.get<any>(environment.APIROOT + '/films/');
   }
+
+  getFilmByName(name: string){
+    return this.http.get<any>(environment.APIROOT + '/films/title/' + name);
+  }
+  
 }

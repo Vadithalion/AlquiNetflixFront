@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FilmsService } from '../../services/films/films.service';
-import {NgForm} from '@angular/forms';
+import {NgForm, FormControlName} from '@angular/forms';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,19 +12,43 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public filmsServices: FilmsService, private sanitizer: DomSanitizer) {}
-  listFilms = [] ;
-  genre = [];
+  constructor(
+    public filmsServices: FilmsService, 
+    private sanitizer: DomSanitizer
+  ) {}
+
+  filmName = new FormGroup({
+  nameFilm: new FormControl()
+  });
+
 
   ngOnInit(): void {
-    this.filmsServices.getAllFilms()
+   this.filmsServices.getAllFilms()
 
     .subscribe(
-      allFilms => {
-        this.filmsServices.allFilms = allFilms;
+    allFilms => {
+       this.filmsServices.allFilms = allFilms;
       }
-    )
-   /* this.getAllFilms();
+   )
+  
+}
+
+click_Films(){
+console.log(this.filmName.value);
+this.filmsServices.getFilmByName(this.filmName.value)
+
+.subscribe(
+  allFilms => {
+    this.filmsServices.allFilms = allFilms;
+  }
+)
+
+};
+
+}
+
+
+/* this.getAllFilms();
   }
   getAllFilms(){
     this.filmsServices.getAllFilms(this.Films)
@@ -37,5 +63,3 @@ export class HomeComponent implements OnInit {
     err => console.log(err)
    );
    }*/
-}
-}

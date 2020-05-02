@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {NgForm, FormControlName} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -33,10 +34,14 @@ import { UserService } from './services/user/user.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+   
   ],
   providers: [
-    UserService
+    UserService,
+    NgForm,
+    FormControlName
+
   ],
   bootstrap: [AppComponent]
 })

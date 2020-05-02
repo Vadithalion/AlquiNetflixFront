@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  userForm = new FormGroup({
+    userForm = new FormGroup({
     username: new FormControl('pepe', Validators.required),
     password: new FormControl('12345'),
     email: new FormControl('pepe@gmail.com')

@@ -1,13 +1,16 @@
 
 <div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Nombre Pelicula" aria-label="Recipient's username" aria-describedby="button-addon2">
+ <form action="" [formGroup]="filmName">
+  <input formControlName="nameFilm" type="text" class="form-control" placeholder="Nombre Pelicula" aria-label="Recipient's username" aria-describedby="button-addon2">
   <div class="input-group-append">
-    <button class="btn btn-primary" type="button" id="button-addon2">BUSCAR</button>
+    <button (click)="click_Films()" class="btn btn-primary" type="button" id="button-addon2">BUSCAR</button>
   </div>
-</div>
+</form>
+  </div>
+
 
 <div class="row row-cols-1 row-cols-md-4">
-<!-- <p> {{ this.filmsServices.allFilms[0].title|json }}</p> -->
+
 <div *ngFor="let film of filmsServices.allFilms" class="card " style="width: 18rem;">
   <img class="card-img-top" src={{film.image}} alt="Card image cap">
   <div class="card-body">
