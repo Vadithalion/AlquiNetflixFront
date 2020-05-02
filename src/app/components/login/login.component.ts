@@ -12,25 +12,27 @@ export class LoginComponent implements OnInit {
   error = '';
   success = '';
   userForm = new FormGroup({
-    username: new FormControl('pepe', Validators.required),
-    password: new FormControl('12345')
+    email: new FormControl('', Validators.required),
+    password: new FormControl('')
   });
 
 
   constructor(
-    private apiService: UserService
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
   }
 
   click_login() {
+    console.log(this.userForm.value);
+
     this.error = '';
     this.success = '';
-    this.apiService.login(this.userForm.value).then(
+    this.userService.login(this.userForm.value).then(
       res => {
-      console.log(res);
-      this.success = res;
+        this.success = res;
+        console.log("hola");
       },
       (err) => {
         this.error = err;
@@ -39,5 +41,14 @@ export class LoginComponent implements OnInit {
   }
 
   validarFormular() {}
+
+  showPass() {
+    const x = (document.getElementById('exampleInputPassword1') as HTMLInputElement);
+    if (x.type === 'password') {
+      x.type = 'text';
+    } else {
+      x.type = 'password';
+    }
+  }
 
 }

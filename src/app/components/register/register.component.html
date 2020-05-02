@@ -5,7 +5,17 @@
       <input
         type="text"
         class="form-control"
-        formControlName="username"
+        formControlName="name"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="surname"
         id="exampleInputEmail1"
         aria-describedby="emailHelp"
       />
@@ -32,6 +42,7 @@
         id="inputPassword"
       />
     </div>
+    <input type="checkbox"  (click)="showPass()">
     <button (click)="click_register()" type="submit" class="btn btn-danger">
       Confirmar
     </button>
