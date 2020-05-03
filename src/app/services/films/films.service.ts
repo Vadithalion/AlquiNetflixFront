@@ -19,7 +19,7 @@ allFilms = [];
   }
 
   getFilmByName(name: string){
-    return this.http.get<any>(environment.APIROOT + '/films/title/' + name);
+    return this.http.get<any>(environment.APIROOT + '/films/title/' + {name});
   }
   
 }
