@@ -21,10 +21,10 @@
       <input type="checkbox" class="form-check-input" id="exampleCheck1"  (click)="showPass()"/>
       <label class="form-check-label" for="exampleCheck1">Show Password</label>
     </div>
-    <button (click)="click_login()" type="submit" class="btn btn-danger">
+    <button (click)="click_login()" type="submit"  routerLink="/user-info" class="btn btn-danger">
       Confirmar
     </button>
-    <label>⬇️ Aún no estas registrado? ⬇️</label>
+    <label></label>
     <a class="btn" routerLink="/register">Registrarme</a>
   </form>
   <label class="text-danger" *ngIf="error !== ''">ERROR: {{ error }}</label>

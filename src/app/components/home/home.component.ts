@@ -17,9 +17,9 @@ export class HomeComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {}
 
-  filmName = new FormGroup({
-  nameFilm: new FormControl()
-  });
+  // filmName = new FormGroup({
+  // nameFilm: new FormControl()
+  // });
 
 
   ngOnInit(): void {
@@ -33,17 +33,17 @@ export class HomeComponent implements OnInit {
   
 }
 
-click_Films(){
-console.log(this.filmName.value);
-this.filmsServices.getFilmByName(this.filmName.value)
+// click_Films(){
+// console.log(this.filmName.value);
+// this.filmsServices.getFilmByName(this.filmName.value)
 
-.subscribe(
-  allFilms => {
-    this.filmsServices.allFilms = allFilms;
-  }
-)
+// .subscribe(
+//   allFilms => {
+//     this.filmsServices.allFilms = allFilms;
+//   }
+// )
 
-};
+// };
 
 }
 

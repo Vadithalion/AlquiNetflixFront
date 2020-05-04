@@ -30,8 +30,8 @@
       <label for="exampleInputPassword1">Contraseña</label>
       <input type="password" class="form-control" formControlName="password" id="inputPassword" />
     </div>
-    <input type="checkbox"  (click)="showPass()">
-    <button (click)="click_register()" type="submit" class="btn btn-danger">
+    <input type="checkbox"  (click)="showPass()"> <label>Ocultar Contraseña</label>
+    <button (click)="click_register()"  routerLink="/home" type="submit" class="btn btn-danger">
       Confirmar
     </button>
   </form>

@@ -2,23 +2,23 @@
 
     <div class="row">
         
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 columna-izq text-center" *ngFor="let user of userService.allusers "   >
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 columna-izq text-center">
             <h3>INFORMACIÓN PERSONAL</h3>
-            <p  class="nombre datos-per">{{user.name}}</p>
-            <p  class="apellido datos-per">{{user.sourname}}</p>
+            <p  class="nombre datos-per">David</p>
+            <p  class="apellido datos-per">Moreno Capel</p>
             <p class="email datos-per"> morenocapeldavid@gmail.com </p>
             <p class="tlf">633-447-487</p>
-            <button type="button" class="btn btn-danger">SALIR</button>
+            <button type="button"  routerLink="/home"class="btn btn-danger">SALIR</button>
         </div>
 
        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 green columna-der">
             <h3>PELICULAS ALQUILADAS</h3>
             <ul class="list-group ">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">Avatar</li>
+                <li class="list-group-item">Star Wars</li>
+                <li class="list-group-item">Tom Rider</li>
+                <li class="list-group-item">Un Ciudadano Ejemplar</li>
+                <li class="list-group-item">Legión</li>
               </ul>
         </div>
 
