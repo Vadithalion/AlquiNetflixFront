@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class FilmsService {
-allFilms = [];
 
 
   constructor(private http: HttpClient) { }
@@ -21,5 +20,4 @@ allFilms = [];
   getFilmByName(name: string){
     return this.http.get<any>(environment.APIROOT + '/films/title/' + name);
   }
-  
 }
